@@ -245,7 +245,7 @@ void Render()
 
 // A very typical game loop:
 GameLoop:
-Console.Clear(); // first, we clear the screen from all that's visible
+Console.SetCursorPosition(0, 0); // first, we reset the cursor
 Update(); // then, we update all of our game objects
 Render(); // then, we render everything to the screen
 Thread.Sleep(deltaTimeMs); // 30FPS is enough for us :)
