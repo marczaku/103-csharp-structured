@@ -9,7 +9,7 @@ Learn about scopes and functions. See, how we can use functions to pack code int
 ```
 Output:Give me a number.
 Input:9
-Output:1
+Output:91
 Output:Give me another number.
 Input:9
 Output:10
