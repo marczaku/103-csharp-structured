@@ -177,11 +177,29 @@ Output:55
 ### Instructions
 - Create a Console Project named `P6OneParameter` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
 - A classic! Implement a function that implements the nth Fibonacci Number
+- Fibonacci number is a number that grows increasingly faster for higher numbers of the sequence
 - `Fibonacci(0)` is defined as: `0`
 - `Fibonacci(1)` is defined as: `1`
 - For every other one:
 - `Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)`
 - Implement this function as a function that takes `n` as an argument and returns the correct result.
+
+Here's the first few numbers of the sequence:
+
+Sequence Number (n) | Result (Fibonacci(n))
+--------------------|----------------------
+0|0
+1|1
+2|1
+3|2
+4|3
+5|5
+6|8
+7|13
+8|21
+9|34
+10|55
+11|89
 
 Need Help? [Here's The Slides!](slides/README.md#6-one-parameter)
 
