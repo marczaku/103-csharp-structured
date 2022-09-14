@@ -54,7 +54,7 @@ Output:You gave number 103.
   - Once for a number between `1` and `3`
   - Once for a number between `41` and `103`
 
-Need Help? [Here's The Slides!](slides/README.md#9-do--while-loops)
+Need Help? [Here's The Slides!](slides/README.md#9-dowhile-loops)
 
 ## 10 - For Loops: 
 
