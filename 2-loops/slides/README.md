@@ -183,7 +183,7 @@ Output:
 - This time, the number `100` was still printed, because it was printed first, and then it was checked, whether it's smaller than `3`.
 - While the `while` loop would first check, whether 100 is smaller than 3 and then not print the number anymore.
 
-## 10. For Loop
+## 10. For Loops
 
 ### Introduction
 
@@ -256,19 +256,20 @@ the execution jumps back to the `condition-statement`
 
 This is an example for one of the most traditional ways of using a for loop:
 ```cs
-// Will be executed for 01234
+// This will be executed for 01234
 for (int i  = 0; i < 5; i++) {
   Console.WriteLine("Iteration" + i);
 }
 ```
-- `initial-statement`: `int i = 0`
-- `condition-statement`: `i < 5`
-- `loop-body-code`: `Console.WriteLine($"Iteration {i}");`
-- `iteration-statement`: `i++`
+- initial statement: `int i = 0`
+- condition statement: `i < 5`
+- iteration statement: `i++`
+- loop body code: `Console.WriteLine($"Iteration {i}");`
 
 
 You can read a `for`-loop of this kind as "Repeat something 7 times":
 ```cs
+// This will be executed for: 0123456
 for(int i = 0; i < 7; i++) {
    // do something here
 }
@@ -318,5 +319,71 @@ for (int y = 0; y < 3; y++) { // iterate bottom-to-top
   for (int x = 0; x < 3; x++) { // iterate left-to-right
     Console.WriteLine($"Coordinate at x:{x}, y:{y}");
   }
+}
+```
+
+---
+
+## 11. Break & Continue
+      
+- Sometimes, Loops are not that simple
+- To solve all kinds of problems, we can use:
+  - `break` to interrupt a loop
+  - `continue` to skip one iteration of a loop
+
+### break
+```cs
+// Spawn 10 new Monsters
+for(int i = 0; i < 10; i++) {
+  // if there is too many monsters already...
+  if(TooManyMonsters()){
+    // ...interrupt the loop and continue at ->
+    break;
+  }
+  // This method will not be called anymore, if break is called
+  SpawnMonster();
+}
+// -> the place after the loop
+StartGame();
+```
+
+This equivalent to:
+
+```cs
+for(int i = 0; i < 10; i++) {
+  if(TooManyMonsters()){
+    goto StopSpawning;
+  }
+  SpawnMonster();
+}
+StopSpawning:
+StartGame();
+```
+
+### continue
+```cs
+for(int i = 0; i < numberOfPlayers; i++) {
+  // if the player has disconnected already...
+  if(PlayerIsDisconnected(i)){
+    // then interrupt this loop iteration and continue with the next iteration ->
+    continue;
+  }
+  // the code only reaches here, if the player #i has not disconnected :)
+  SpawnPlayer(i);
+  
+  // -> the next iteration will begin after the end
+}
+```
+
+This equivalent to:
+
+```cs
+for(int i = 0; i < numberOfPlayers; i++) {
+  if(PlayerIsDisconnected(i)){
+    goto SkipPlayer;
+  }
+  SpawnPlayer(i);
+
+  SkipPlayer:;
 }
 ```
