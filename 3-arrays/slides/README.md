@@ -1,206 +1,367 @@
 # Slides 3 - Conditions
 
-## 8. Boolean
+## 12. Arrays
 
-## bool Type
+### The Problem
 
-- **Booleans** (`bool`) are used to display values, that can be:
-  - `YES` or `NO`
-  - `ON` or `OFF`
-  - `TRUE` or `FALSE`
-```cs
-bool isWaterBlue = true;
-bool isWaterRed = false;
-```
-
-## Logical Operators
-
-- You can inverse them by using an exclamation mark `!` (read it as `NOT`
-  - `!true` -> `false`
-  - `!false` -> `true`
-```cs
-bool isWaterNotRed = !isWaterRed; // true
-```
-- You can combine two `bool` values with `&&` (Read: AND) or `||` (Read: OR)
-- `&&` only returns `true`, if both incoming values are `true`:
-```cs
-bool isOfFullAge = true;
-bool hasEnoughMoney = true;
-// You are only allowed, if you are of full age AND you have enough money:
-bool mayBuyBeer = isOfFullAge && hasEnoughMoney; // true
-```
+Often, in our code, we want to store multiple of things. For example, multiple item slots that the player can have:
 
 ```cs
-bool isOfFullAge = false;
-bool hasEnoughMoney = true;
-bool mayBuyBeer = isOfFullAge && hasEnoughMoney; // false, because you are not of Full Age.
+public string item1;
+public string item2;
+public string item3;
+// ...
 ```
 
-<img width="663" alt="image" src="https://user-images.githubusercontent.com/7360266/135261149-d4c2a4d5-7528-48cd-a834-0beb68c3e78c.png">
-
-- `||` returns `true`, if either incoming value is `true`:
-```cs
-bool hasEnoughMoney = true;
-bool canGetALoan = true;
-// You are allowed to buy the product, if you either have enough money, or you can get a loan:
-bool mayBuyBeer = hasEnoughMoney || canGetALoan; // true
-```
+Accessing these items will require a lot of code:
 
 ```cs
-bool hasEnoughMoney = false;
-bool canGetALoan = true;
-bool mayBuyBeer = hasEnoughMoney || canGetALoan; // true
+void UseItem(int number){
+  if(number == 1 && item1 != ""){
+    Use(item1);
+    item1 = "";
+  }
+  if(number == 2 && item2 != ""){
+    Use(item2);
+    item2 = "";
+  }
+  if(number == 3 && item3 != ""){
+    Use(item3);
+    item3 = "";
+  }
+  // ...
+}
 ```
+
+- Now imagine that for a 100 item slots...
+- And then for 1000
+- How about having 1.000.000 Players?
+- And what happens, if the number of item slots can vary (depending on the player's level)?
+
+### The solution
+
+The solution to this problem are arrays. They allow storing multiple items of the same kind in one collection:
 
 ```cs
-bool hasEnoughMoney = false;
-bool canGetALoan = false;
-bool mayBuyBeer = hasEnoughMoney || canGetALoan; // false
+// 10 item slots:
+string[] items = new string[10];
 ```
 
-<img width="663" alt="image" src="https://user-images.githubusercontent.com/7360266/135261875-3d194376-9e52-459a-9991-664225e8e8d0.png">
+And what's even better: They allow accessing each item using a numeric index:
 
-
-## Comparison Operators
-
-- Comparision operators can compare two values and return a `bool` (`true` or `false`)
 ```cs
-bool isGreater = 10 > 9; // True
-bool isEqual = 10 == 9; // False
-bool isNotEqual = 10 != 9; // True
-bool isLess = 10 < 9; // False
-bool isGreaterOrEqual = 10>= 9; // True
-bool isLessOrEqual = 10<= 9; // False
+void UseItem(int number){
+  if(item[number] != ""){
+    Use(item[number]);
+    item[number] = "";
+  }
+}
 ```
+
+### Definition
+
+An `Array` can be defined for ANY Type using the syntax:
+
+```cs
+VARIABLE_TYPE[] variableName;
+```
+
+### Initialization
+
+It can be initialized using the syntax:
+
+```cs
+variableName = new VARIABLE_TYPE[length];
+```
+
+e.g.:
+
+```cs
+int[] numbers = new int[5];
+```
+
+You can even initialize the Array with values by using the Array Initializer Syntax:
+
+```cs
+string[] options = {"Rock", "Paper", "Scissors"};
+```
+
+
+
+An `Array` is a numbered range of values of the same Type:
+
+```cs
+int[] numbers = {0, 1, 2, 3, 4, 5};
+```
+
+Arrays have a constant size. Once created, it can not change:
+
+```cs
+int[] items = new int[5];
+```
+
+You can read an `Array`'s `Length`
+
+```cs
+Console.WriteLine(items.Length); // 5
+```
+
+And then use a `for`-loop:
+
+```cs
+for(int i = 0; i < items.Length; i++){
+  Console.WriteLine(items[i]);
+}
+```
+
+Creating an Array of 3 Elements:
+```cs
+int[] array = new int[3];
+```
+
+| Index   |   0  |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   0  |   0  |  0   |
+
+
+Assigning a value to the Array:
+```cs
+array[1] = 5;
+```
+| Index   |   0  |  >1< |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   0  | **5** |  0   |
+
+The first element has the index zero:
+```cs
+array[0] = 3;
+```
+| Index   |  >0< |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  | **3** |   5  |  0   |
+
+Invalid, array only has the size of 3:
+```cs
+array[5] = 2;
+```
+| Index   |   0  |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |  0   |
+
+Invalid too, array only starts at 0:
+```cs
+array[-2] = 2
+```
+| Index   |   0  |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |  0   |
+
+Invalid too, int array can only have ints:
+```cs
+array[3] = "Hello";
+```
+| Index   |   0  |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |  0   |
+
+You can of course also read a value from the array:
+```cs
+Console.WriteLine(array[1]);
+```
+| Index   |   0  |  >1< |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |  0   |
+
+Output:
+```
+5
+```
+
+This is valid: you have created a new Array with a different size, but all elements are empty again:
+```cs
+array = new int[5];
+```
+| Index   |   0  |   1  |   2  |   3  |   4  |
+| :-----: | :--: | :--: | :--: | :--: | :--: |
+|  Value  | **0** | **0** | **0** | **0** | **0** |
+
+You can initialize a new Array with values:
+```cs
+array = new int[3] {3, 5, 7};
+```
+| Index   |   0  |   1  |   2  |
+| :-----: | :--: | :--: | :--: |
+|  Value  | **3** | **5** | **7** |
+
+This keeps all elements when resizing. Internally, it just copies all the values.
+```cs
+Array.Resize(ref array, 5);
+```
+| Index   |   0  |   1  |   2  |   3  |   4  |
+| :-----: | :--: | :--: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |   7  | **0** | **0** |
+
+You can read the length of an array
+```cs
+int length = array.Length; // 5
+```
+| Index   |   0  |   1  |   2  |   3  |   4  |
+| :-----: | :--: | :--: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |   7  |   0  |   0  |
+
+// You can use the length to do a for loop:
+```cs
+for (int i = 0; i < array.Length; i++) {
+  Console.WriteLine(array[i]);
+}
+```
+| Index   |   0  |   1  |   2  |   3  |   4  |
+| :-----: | :--: | :--: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |   7  |   0  |   0  |
+
+Output:
+```
+3
+5
+7
+0
+0
+```
+
+// You can also use a foreach-loop:
+```cs
+foreach (int value in array) {
+  Console.WriteLine(value);
+}
+```
+| Index   |   0  |   1  |   2  |   3  |   4  |
+| :-----: | :--: | :--: | :--: | :--: | :--: |
+|  Value  |   3  |   5  |   7  |   0  |   0  |
+Output:
+```
+3
+5
+7
+0
+0
+```
+
 
 ---
 
-## 9. If .. Else
+## 13. 2D-Arrays
 
-- Using `if`-`else` Blocks with Conditions allows you to write conditional code
-- Code, that is only executed, if a condition is met
+### Two-Dimensional Array
+
+- You can create two-dimensional arrays as well, using the `[,]` symbol with the type:
+```cs
+string[,] grid2d = new string[2,2];
+```
+| v 2nd Index \ 1st Index ->  |   0  |   1  |
+|              :-----:        | :--: | :--: |
+|                 0           | null | null |
+|                 1           | null | null |
+
+To set values, you need to provide two indices separated by comma now `[x,y]`: 
+```cs
+grid2d[0,0] = "topLeft";
+```
+| v 2nd Index \ 1st Index ->  |  >0< |   1  |
+|              :-----:        | :--: | :--: |
+|                >0<          | "topLeft" | null |
+|                 1           | null | null |
 
 ```cs
-if(bool-condition) { // if-scope-start
-   // then execute this code
-} // if-scope-end
-else 
-{ // else-scope-start
-   // else execute this code
-} // else-scope-end
+grid2d[0,1] = "bottomLeft";
 ```
-
-- Here is an example of using `if`-`else if`-`else` to print an appropriate Greeting depending on the time:
+| v 2nd Index \ 1st Index ->  |  >0< |   1  |
+|              :-----:        | :--: | :--: |
+|                 0           | "topLeft" | null |
+|                >1<          | "bottomLeft" | null |
 ```cs
-int hour = GetHour();
-if (hour <12) {
-  // If the hour is 0-11
-  Console.WriteLine("Good morning!");
-}
-else if (hour <18) {
-  // Else, if the hour is 12-17
-  Console.WriteLine("Good Day!");
-}
-else {
-  // If the hour is more than 18
-  Console.WriteLine("Good Evening!");
-}
+grid2d[1,0] = "topRight";
 ```
-
-- If-Statements are also called flow control statements, because you can control the flow of the code.
-- Take this code sample, for example:
+| v 2nd Index \ 1st Index ->  |   0  |  >1< |
+|              :-----:        | :--: | :--: |
+|                >0<          | "topLeft" | "topRight" |
+|                 1           | "bottomLeft" | null |
 ```cs
-int age = Convert.ToInt32(Console.ReadLine());
-if(age >= 18)
-{
-  Console.WriteLine("You are grown up!");
-} 
-else 
-{
-  Console.WriteLine("Not old enough!");
-}
-Console.WriteLine("Thanks for visiting!");
+grid2d[1,1] = "bottomRight";
 ```
-- The Code Flow can be seen here:
+| v 2nd Index \ 1st Index ->  |   0  |  >1< |
+|              :-----:        | :--: | :--: |
+|                 0           | "topLeft" | "topRight" |
+|                >1<          | "bottomLeft" | "bottomRight" |
 
-<img width="510" alt="image" src="https://user-images.githubusercontent.com/7360266/135164846-9f41ef18-9263-49ab-87fb-3273ef9d1c6e.png">
-
-As you can see, the Code Flow (Arrows) changes depending on the condition.\
-Without flow control statements, code simply runs from top to bottom.\
-But thanks to `if`..`else` and other flow control statements, we can write dynamic and interactive code!
-
-
-- The ternary if-operator can be used as a short-cut for `if`-`else`-blocks, when assigning a value:
-```cs
-string greeting = condition ? then-value : else-value;
-string greeting = condition ? true-value : false-value;
-```
+### One-Dimensional 2D-Array?
+- Alternatively, you can use a one-dimensional array and a helper index to get the right cell.
+- Two-dimensional arrays do the same internally.
+- No advantage in doing this yourself.
 
 ```cs
-string greeting = hour < 12 ? "Good Morning!" : "Good Day!";
+string[] grid1d = new string[4];
+static int GetIndex(int x, int y, int width) {
+  return y * width + x;
+}
 ```
-- Above code sample is the same as:
+| Index   |   0  |   1  |   2  |   3  |
+| :-----: | :--: | :--: | :--: | :--: |
+|  Value  | null | null | null | null |
 ```cs
-string greeting;
-if (hour < 12) {
-  greeting = "Good Morning!";
-}
-else {
-  greeting = "Good Day!";
+grid1d[GetIndex(0, 0, 2)] = "bottomLeft"; // 0 * 2 + 0 = 0
+```
+| Index   |  >0< |   1  |   2  |   3  |
+| :-----: | :--: | :--: | :--: | :--: |
+|  Value  | "bottomLeft" | null | null | null |
+
+```cs
+grid1d[GetIndex(0, 1, 2)] = "topLeft"; // 1 * 2 + 0 = 2
+```
+| Index   |   0  |   1  |  >2< |   3  |
+| :-----: | :--: | :--: | :--: | :--: |
+|  Value  | "bottomLeft" | null | "topLeft" | null |
+
+```cs
+grid1d[GetIndex(1, 0, 2)] = "bottomRight"; // 0 * 2 + 1 = 1
+```
+| Index   |   0  |  >1< |   2  |   3  |
+| :-----: | :--: | :--: | :--: | :--: |
+|  Value  | "bottomLeft" | "bottomRight" | "topLeft" | null |
+
+```cs
+grid1d[GetIndex(1, 1, 2)] = "topRight"; // 1 * 2 + 1 = 3
+```
+| Index   |   0  |   1  |   2  |  >3< |
+| :-----: | :--: | :--: | :--: | :--: |
+|  Value  | "bottomLeft" | "bottomRight" | "topLeft" | "topRight" |
+
+### Jagged Arrays
+- Another solution is to use an array of arrays.
+- It has worse performance though!
+- The advantage is: its rows can have different size.
+- Not recommended! (Unless you want to have rows of different sizes)
+
+```cs
+string[][] gridJagged = new string[2][];
+```
+| Index   |   0  |   1  |
+| :-----: | :--: | :--: |
+|  Value  | null | null |
+
+```cs
+for (var i = 0; i < gridJagged.Length; i++) {
+  gridJagged[i] = new string[2];
 }
 ```
+| Index   |   0  |   1  |
+| :-----: | :--: | :--: |
+|  Value  | <table><tr><td>Index</td><td>0</td><td>1</td></tr><tr><td>Value</td><td>null</td><td>null</td></tr></table> | <table><tr><td>Index</td><td>0</td><td>1</td></tr><tr><td>Value</td><td>null</td><td>null</td></tr></table> |
 
+```cs
+gridJagged[0][1] = "bottomLeft";
+```
+| Index   |  >0< |   1  |
+| :-----: | :--: | :--: |
+|  Value  | <table><tr><td>Index</td><td>0</td><td>>1<</td></tr><tr><td>Value</td><td>null</td><td>"bottomLeft"</td></tr></table> | <table><tr><td>Index</td><td>0</td><td>1</td></tr><tr><td>Value</td><td>null</td><td>null</td></tr></table> |
 
-            
 ---
-
-## 10. Random
-
-- Using `.NET`s `Random`-Class allows you to generate random numbers
-- The numbers are pseudo-random: 
-  - they are using complex mathematical operations to make them appear random*
-  - They are guaranteed to be evenly ditributed across all numbers
-- You use a seed to determine, which sequence of numbers you want to have
-- **That‘s a feature:** we can reproduce the same random numbers if we know the seed. 
-  - e.g. for Replays or Multiplayer-Simulations
-  - where it's important for the replays to have the same "random" events as the original match
-
-- `Random()` initializes a new `Random` Instance with a Random Seed
-```cs
-Random random = new Random();
-```
-
-- `Random(int seed)` initializes a new `Random` Instance with a Custom Seed
-```cs
-Random random = new Random(23746);
-```
-
-- `int Next(int min, int max)` receives a new random integer between `0` (inclusive) and `5` (exclusive), so either `0`, `1`, `2`, `3` or `4`
-```cs
-int number = random.Next(0, 5); // [0..5[
-```
-
-- `int Next()` gets a random integer between `0` and `int.MaxValue` (1.2 bln)
-```cs
-int number = random.Next(); // [0..2147483647[
-```
-
-- `double NextDouble()` Receive a new randomNumber between 0 (inclusive) and 1 (exclusive), so anything between 0.000000 and 0.9999999
-```cs
-double number = random.NextDouble(); // [0.0..1.0[
-```
-
-- To receive a number between 0 (inclusive) and 2.3 (exclusive), you can apply this simple mathematical trick:
-- You just multiply the number with 2.3, which will scale all the numbers between 0 and 1 to be evenly distributed between 0 and 2.3
-```cs
-double number = random.NextDouble()*2.3; // [0.0..2.3[
-```
-
-- To receive a number between 1.2 (inclusive) and 2.3 (exclusive), it is a bit more complicated:
-- You need to multiply the number with 1.1 (2.3-1.2), because that's the range of different numbers you need.
-  - This will give you numbers between 0 and 1.1
-- Now, you just add 1.2 to that number, which will move all numbers 1.2 higher
-  - This will give you numbers between 1.2 and 2.3
-```cs
-double number = random.NextDouble()*(2.3-1.2)+1.2; // [1.2..2.3[
-```
