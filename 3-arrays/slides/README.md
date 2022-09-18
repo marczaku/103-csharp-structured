@@ -86,31 +86,21 @@ You can even initialize the Array with values by using the Array Initializer Syn
 string[] options = {"Rock", "Paper", "Scissors"};
 ```
 
-
-
-An `Array` is a numbered range of values of the same Type:
-
 ```cs
 int[] numbers = {0, 1, 2, 3, 4, 5};
-```
-
-Arrays have a constant size. Once created, it can not change:
-
-```cs
-int[] items = new int[5];
 ```
 
 You can read an `Array`'s `Length`
 
 ```cs
-Console.WriteLine(items.Length); // 5
+Console.WriteLine(numbers.Length); // 5
 ```
 
 And then use a `for`-loop:
 
 ```cs
-for(int i = 0; i < items.Length; i++){
-  Console.WriteLine(items[i]);
+for(int i = 0; i < numbers.Length; i++){
+  Console.WriteLine(numbers[i]);
 }
 ```
 
@@ -209,7 +199,7 @@ int length = array.Length; // 5
 | :-----: | :--: | :--: | :--: | :--: | :--: |
 |  Value  |   3  |   5  |   7  |   0  |   0  |
 
-// You can use the length to do a for loop:
+You can use the length to do a for loop:
 ```cs
 for (int i = 0; i < array.Length; i++) {
   Console.WriteLine(array[i]);
@@ -227,25 +217,6 @@ Output:
 0
 0
 ```
-
-// You can also use a foreach-loop:
-```cs
-foreach (int value in array) {
-  Console.WriteLine(value);
-}
-```
-| Index   |   0  |   1  |   2  |   3  |   4  |
-| :-----: | :--: | :--: | :--: | :--: | :--: |
-|  Value  |   3  |   5  |   7  |   0  |   0  |
-Output:
-```
-3
-5
-7
-0
-0
-```
-
 
 ---
 
@@ -297,6 +268,7 @@ grid2d[1,1] = "bottomRight";
 - Alternatively, you can use a one-dimensional array and a helper index to get the right cell.
 - Two-dimensional arrays do the same internally.
 - No advantage in doing this yourself.
+- But UnityEngine for example can serialize One-Dimensional Arrays, but not Two-Dimensional ones:
 
 ```cs
 string[] grid1d = new string[4];

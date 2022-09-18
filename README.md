@@ -8,7 +8,7 @@ This course will introduce you to writing reusable code using functions, using L
 
 The grading allows you to skip the exercises, if you are confident enough.\
 I recommend following this path:
-- Beginner: Work your way through all exercises and then try yourself at implementing Nim.
+- Beginner: Work your way through all exercises and then try yourself at implementing Tic-Tac-Toe.
 - Intermediate: You may start implementing Tic-Tac-Toe and then try yourself at your own game.
 - Advanced: Better score some save points with Tic-Tac-Toe first, but then you may try implementing a game of your own.
 

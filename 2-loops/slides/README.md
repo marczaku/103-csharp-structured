@@ -15,7 +15,7 @@ if(playerHealth > 0){ // continue fight, if the player is still alive
   // simulate fight:
   int damage = Random.Shared.Next(0, 3);
   playerHealth -= damage;
-  Console.WritLine($"Player takes {damage} Damage and has {playerHealth} HP left.");
+  Console.WriteLine($"Player takes {damage} Damage and has {playerHealth} HP left.");
   goto AttackStart; // and after those things, we return to the condition again.
 }
 Console.WriteLine("Unfortunately, the player has died.");
@@ -50,7 +50,7 @@ while(playerHealth > 0){ // continue fight, if the player is still alive
   // simulate fight:
   int damage = Random.Shared.Next(0, 3);
   playerHealth -= damage;
-  Console.WritLine($"Player takes {damage} Damage and has {playerHealth} HP left.");
+  Console.WriteLine($"Player takes {damage} Damage and has {playerHealth} HP left.");
 }
 Console.WriteLine("Unfortunately, the player has died.");
 ```
@@ -100,7 +100,7 @@ while(userAnswer != "Yes")
   // Ask the uer to agree.
   Console.WriteLine("Do you want to buy my game? Yes or No?");
   // Assign the user's answer to `userAnswer`
-  userAnswer = Console.ReadLine() == "Yes")
+  userAnswer = Console.ReadLine();
 }
 // We can only get here, if the user has agreed.
 Console.WriteLine("Thanks for buying my game.");
@@ -125,7 +125,7 @@ This is due to us checking the answer first and then asking the user. If only, t
 ```cs
 AskAgain:
 Console.WriteLine("Do you want to buy my game? Yes or No?");
-string userAnswer = Console.ReadLine() == "Yes")
+string userAnswer = Console.ReadLine();
 if(userAnswer != "Yes"){
   goto AskAgain;
 }
@@ -141,7 +141,7 @@ string userAnswer;
 do
 {
   Console.WriteLine("Do you want to buy my game? Yes or No?");
-  userAnswer = Console.ReadLine() == "Yes")
+  userAnswer = Console.ReadLine();
 } while (userAnswer != "Yes");
 Console.WriteLine("Thanks for buying my game.");
 ```
@@ -180,8 +180,8 @@ Output:
 100
 ```
 
-- This time, the number `100` was still printed, because it was printed first, and then it was checked, whether it's smaller than `3`.
-- While the `while` loop would first check, whether 100 is smaller than 3 and then not print the number anymore.
+- This time, the number `100` was still printed, because it was printed first, and afterwards it was checked, whether `101 < 3`
+- While the `while` loop would first check the condition `100 < 3` and then not print the number at all.
 
 ## 10. For Loops
 
@@ -192,10 +192,9 @@ Very often in programming, we encounter the situation, where we want to use a lo
 ### using goto
 
 ```cs
-int numberOfPlayers = 10;
 int counter = 0; // initial-statement
 LoopStart:
-if (counter < numberOfPlayers) // condition-statement
+if (counter < 10) // condition-statement
 { 
   Console.WriteLine("Hello, Player " + counter); // loop-body
   counter++; // iteration-statement
@@ -208,9 +207,8 @@ if (counter < numberOfPlayers) // condition-statement
 We can simplify above example using a `while`-loop:
 
 ```cs
-int numberOfPlayers = 10;
 int counter = 0; // initial-statement
-while (counter < numberOfPlayers) // condition-statement
+while (counter < 10) // condition-statement
 { 
   Console.WriteLine("Hello, Player " + counter); // loop-body
   counter++; // iteration-statement
@@ -225,10 +223,9 @@ For this problem, a standardized has been introduced with the `for`-loop.\
 Above sample would look like this:
 
 ```cs
-int numberOfPlayers = 10;
 int counter = 0; 
 // initial-statement;condition-statement;iteration-statement
-for(int counter = 0; counter < numberOfPlayers; counter++)) // 
+for(int counter = 0; counter < 10; counter++)) // 
 { 
   Console.WriteLine("Hello, Player " + counter); // loop-body
 }
@@ -248,7 +245,7 @@ for(initialStatement; conditionStatement; iterationStatement)
 
 `initial-statement` is executed ONCE when the `for` loop is started.
 `condition-statement` is checked next EVERY loop.
-- it is a `bool`-expression that needs to be true for the loop to continue.
+- it is a `bool`-expression that needs to be `true` for the loop to continue.
 - if it returns `false`, the body of the loop and the `iteration-statement`  are not executed (anymore)
 `for-loop-body` is executed next after the `condition-statement` EVERY loop.
 `iteration-statement` is executed next after the body EVERY loop.
@@ -256,11 +253,16 @@ the execution jumps back to the `condition-statement`
 
 This is an example for one of the most traditional ways of using a for loop:
 ```cs
-// This will be executed for 01234
 for (int i  = 0; i < 5; i++) {
-  Console.WriteLine("Iteration" + i);
+  Console.Write(i);
 }
 ```
+
+Output:
+```
+01234
+```
+
 - initial statement: `int i = 0`
 - condition statement: `i < 5`
 - iteration statement: `i++`

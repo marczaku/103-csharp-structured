@@ -224,7 +224,12 @@ float end = width;
 float position = start;
 float timePassed = 0f;
 
-// TODO: Implement the missing functions here :)
+// -----------------------------------
+// TODO: Implement the missing functions between here...
+
+
+// and here!
+// -----------------------------------
 
 void Update()
 {
@@ -274,6 +279,7 @@ goto GameLoop;
 
 ### Instructions
 - Create a Console Project named `P7MoreParameters` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
+- Copy Above Source Code into your `Program.cs`-File.
 - You need to implement two functions in this complex code sample!
 - `Lerp` is a function that has three parameters of type `float` and returns a value of type `float`.
   - First Argument `from` of type `float` is used to pass a start value to `Lerp`
