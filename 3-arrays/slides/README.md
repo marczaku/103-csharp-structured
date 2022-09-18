@@ -87,8 +87,22 @@ string[] options = {"Rock", "Paper", "Scissors"};
 ```
 
 ```cs
-int[] numbers = {0, 1, 2, 3, 4, 5};
+int[] numbers = {3, 5, 7, 2, 0};
 ```
+
+### Reading a value from an Array
+
+```cs
+Console.WriteLine(numbers[2]); // 7
+```
+
+### Changing a value in an Array
+
+```cs
+numbers[2] = 11;
+```
+
+### Reading the Length
 
 You can read an `Array`'s `Length`
 
@@ -96,13 +110,48 @@ You can read an `Array`'s `Length`
 Console.WriteLine(numbers.Length); // 5
 ```
 
-And then use a `for`-loop:
+### Iteration
+
+And then use a `for`-loop to iterate over an Array:
 
 ```cs
 for(int i = 0; i < numbers.Length; i++){
   Console.WriteLine(numbers[i]);
 }
 ```
+
+### Reference-Type
+
+At this point, we need to do a short introduction to a rather complex topic: Reference Types. Firstly, let's look at Reference Types (which are almost all types that you've used so far):
+
+```cs
+int a = 5; // 5
+int b = a; // 5
+a = 6;     // 6
+Console.WriteLine(a); // 6
+Console.WriteLine(b); // 5
+```
+
+Here, after assigning one variable `a` to another `b`, its value got copied over. Which means, that when assigning a new value to `a`, `b` won't be affected by that change.
+
+Now let's look at an Array:
+
+```cs
+int[] a = {5, 5, 5};
+int[] b = a;
+a[0] = 6;
+Console.WriteLine(a[0]); // 6
+Console.WriteLine(b[0]); // 6
+```
+
+Curious, isn't it? When we assign an Array to a new variable (same, when we pass an Array into a function), then it seems like the Array does not get copied like it does for other Types but instead, changes to one variable of this array affect the other one as well.
+
+We will learn the exact differences between Value and Reference Types later. But for now, make sure to understand that when you hand an Array to a function, then that function can make changes to the contents of the Array and it can affect the calling function.
+
+### Detailed Code Sample
+
+<details>
+   <summary>Toggle for a Detailed Example of using an Array</summary>
 
 Creating an Array of 3 Elements:
 ```cs
@@ -122,6 +171,11 @@ array[1] = 5;
 | :-----: | :--: | :--: | :--: |
 |  Value  |   0  | **5** |  0   |
 
+You cannot assign a value to an array without using the Index-Operator:
+```cs
+array = 5; // ERROR
+```
+
 The first element has the index zero:
 ```cs
 array[0] = 3;
@@ -132,7 +186,7 @@ array[0] = 3;
 
 Invalid, array only has the size of 3:
 ```cs
-array[5] = 2;
+array[5] = 2; // ERROR
 ```
 | Index   |   0  |   1  |   2  |
 | :-----: | :--: | :--: | :--: |
@@ -140,15 +194,15 @@ array[5] = 2;
 
 Invalid too, array only starts at 0:
 ```cs
-array[-2] = 2
+array[-2] = 2; // ERROR
 ```
 | Index   |   0  |   1  |   2  |
 | :-----: | :--: | :--: | :--: |
 |  Value  |   3  |   5  |  0   |
 
-Invalid too, int array can only have ints:
+Invalid too, you cannot assign a `string` value to an `int` array:
 ```cs
-array[3] = "Hello";
+array[3] = "Hello"; // ERROR
 ```
 | Index   |   0  |   1  |   2  |
 | :-----: | :--: | :--: | :--: |
@@ -156,16 +210,11 @@ array[3] = "Hello";
 
 You can of course also read a value from the array:
 ```cs
-Console.WriteLine(array[1]);
+Console.WriteLine(array[1]); // 5
 ```
 | Index   |   0  |  >1< |   2  |
 | :-----: | :--: | :--: | :--: |
 |  Value  |   3  |   5  |  0   |
-
-Output:
-```
-5
-```
 
 This is valid: you have created a new Array with a different size, but all elements are empty again:
 ```cs
@@ -217,6 +266,8 @@ Output:
 0
 0
 ```
+
+</details>
 
 ---
 
