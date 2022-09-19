@@ -125,7 +125,7 @@ for(int i = 0; i < numbers.Length; i++){
 
 ### Reference-Type
 
-At this point, we need to do a short introduction to a rather complex topic: Reference Types. Firstly, let's look at Reference Types (which are almost all types that you've used so far):
+At this point, we need to do a short introduction to a rather complex topic: Reference Types. Firstly, let's look at Value Types (which are almost all types that you've used so far):
 
 ```cs
 int a = 5; // 5
