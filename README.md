@@ -40,7 +40,7 @@ Here, we will learn about using Loop-Keywords to structure our Program in repeat
 
 # 3 Arrays
 ## Goal
-Learn about more complex data manipulation through Maths, Strings, Random Numbers and comparison, as well as code flow control through conditional code.
+Loops allow us to repeat the same instructions 100 times or even a million times. But how can we store 100 or even a million variables? The answer is: using Arrays. We'll learn about what Arrays are and how to use them to store and read information from them.
 
 [Let's Get Started!](3-arrays)
 

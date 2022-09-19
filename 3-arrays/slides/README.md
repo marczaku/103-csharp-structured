@@ -1,5 +1,8 @@
 # Slides 3 - Conditions
 
+## Goal
+Loops allow us to repeat the same instructions 100 times or even a million times. But how can we store 100 or even a million variables? The answer is: using Arrays. We'll learn about what Arrays are and how to use them to store and read information from them.
+
 ## 12. Arrays
 
 ### The Problem
