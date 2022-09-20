@@ -103,6 +103,7 @@ Need Help? [Here's The Slides!](slides/README.md#12-arrays)
 ### Goal
 <details>
   <summary>Toggle Me</summary>
+
 ```
 Output:y
 Output:4
@@ -147,6 +148,7 @@ Output:2
 Output:1
 Output:01234x
 ```
+
 </details>
 
 ### Instructions
