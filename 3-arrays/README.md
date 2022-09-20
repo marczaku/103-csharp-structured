@@ -110,7 +110,8 @@ Output:4
 Output:3
 Output:2
 Output:1
-Output:01234x
+Output:0
+Output:\01234x
 Output:Give me a x coordinate.
 Input:2
 Output:Give me a y coordinate.
@@ -122,7 +123,8 @@ Output:4
 Output:3 O
 Output:2
 Output:1
-Output:01234x
+Output:0
+Output:\01234x
 Output:Give me a x coordinate.
 Input:1
 Output:Give me a y coordinate.
@@ -134,7 +136,8 @@ Output:4E
 Output:3 O
 Output:2
 Output:1
-Output:01234x
+Output:0
+Output:\01234x
 Output:Give me a x coordinate.
 Input:2
 Output:Give me a y coordinate.
@@ -146,7 +149,8 @@ Output:4EY
 Output:3 O
 Output:2
 Output:1
-Output:01234x
+Output:0
+Output:\01234x
 ```
 
 </details>
@@ -162,6 +166,8 @@ We'll make a text-driven Painting Tool!
   - Ask the user for a y coordinate
   - Ask the user for a symbol
   - Store the symbol at the correct index of the two dimensional array
+
+Note: If you want to print a `\`, you need to escape the character: `\\`.
 
 Need Help? [Here's The Slides!](slides/README.md#13-2d-arrays)
 
