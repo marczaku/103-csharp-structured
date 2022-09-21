@@ -120,7 +120,7 @@ Output:Give me a symbol.
 Input:O
 Output:y
 Output:4
-Output:3 O
+Output:3  O
 Output:2
 Output:1
 Output:0
@@ -132,8 +132,8 @@ Input:4
 Output:Give me a symbol.
 Input:E
 Output:y
-Output:4E 
-Output:3 O
+Output:4 E 
+Output:3  O
 Output:2
 Output:1
 Output:0
@@ -145,8 +145,8 @@ Input:4
 Output:Give me a symbol.
 Input:Y
 Output:y
-Output:4EY
-Output:3 O
+Output:4 EY
+Output:3  O
 Output:2
 Output:1
 Output:0
