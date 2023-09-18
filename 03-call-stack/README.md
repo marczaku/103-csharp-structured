@@ -1,4 +1,6 @@
-# Exercises 4 - Call Stack
+# Exercises 3 - Call Stack
+
+## Final Exercise
 
 ### Goal
 ```
@@ -26,3 +28,14 @@ Output:Launch!
 - What happens after that?
 - Run the code line by line using the debugger. 
 - Observe the call stack. Can you confirm your guesses?
+
+## P03_1Triangle
+Draw the Triangle again, but this time using a recursive function instead of `goto`
+
+```csharp
+#####
+####
+###
+##
+#
+```
