@@ -1,4 +1,4 @@
-# 103 - CSharp Functions, Loops and Arrays
+# 103 - C# Structured
 
 ## Goal
 
