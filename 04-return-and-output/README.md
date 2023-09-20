@@ -2,7 +2,9 @@
 
 ## 4.1 Return Keyword
 
-### Goal
+### Final Exercise
+
+#### Goal
 ```
 Output:What's your name?
 Input:Marc
@@ -15,7 +17,7 @@ Input:No
 Output:Congratulations, you made it in.
 ```
 
-### Instructions
+#### Instructions
 - Create a Console Project named `P04_1Return` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
 - Create a function called `MyFunction`
   - Return Type `void`
@@ -29,8 +31,40 @@ Output:Congratulations, you made it in.
 - Make sure to call the function `MyFunction`
 - Remember to use the `return` Keyword.
 
+### P04_1_1BuyGamePls
+Write a function that asks the user to buy a game. If the user enters "Yes", the function says "Thank you" and `returns`. Otherwise, the function asks again.
 
-Need Help? [Here's The Slides!](slides/README.md#4-return-keyword)
+### P04_1_2Countdown
+Write the countdown exercise again, which recursively invokes itself. But instead of the function checking if the remaining timer is > 0 and if true, invoking itself, implement it the other way round: If the remaining timer is not > 0, have it `return`. Example:
+
+Before:
+```cs
+if(health < 3){
+   HealAgain();
+}
+```
+
+After:
+```cs
+if(health == 3){
+   return;
+}
+HealAgain();
+```
+
+### P04_1_3MakeTheMessageAppear
+Look at the code sample below. Fix it by replacing the comment with code to make the magic message appear.
+
+```cs
+void MagicMessage(){
+  Console.WriteLine("You're trying to find the magic message.");
+  // Replace this comment with code.
+  return;
+  Magic:
+  Console.WriteLine("You found the magic message.");
+}
+MagicMessage();
+```
 
 ## 4.2 Return Value
 
@@ -53,3 +87,12 @@ Output:Pick Rock, Paper or Scissors.
   - but only, after the player has made a valid choice
 - Write one function that returns the AI's choice
 - Use those functions in your Core Game Loop
+
+### P04_2_1Numbers
+Write a function `Four` that returns the number `4` and a function `5` that returns the number `5`. Invoke each function and assign their results to variables. Add both variables to a third variable. Print that variable to the console.
+
+### P04_2_2UserInput
+Write a function `GetUserMatches` that asks the user for how many matches he wants to draw. If the user enters a valid number (1, 2 or 3), it returns the users input as a number. Otherwise, it shows an error and asks again. Invoke that function and assign the result to a variable named `userMatches`. Print the value of the variable to the console.
+
+### P04_2_3AIInput
+Write a function `GetAIMatches` that asks the AI for how many matches it wants to draw. It returns a random valid number (1, 2 or 3). Invoke that function and assign the result to a variable named `aiMatches`. Print the value of the variable to the console.
