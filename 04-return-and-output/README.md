@@ -89,7 +89,7 @@ Output:Pick Rock, Paper or Scissors.
 - Use those functions in your Core Game Loop
 
 ### P04_2_1Numbers
-Write a function `Four` that returns the number `4` and a function `5` that returns the number `5`. Invoke each function and assign their results to variables. Add both variables to a third variable. Print that variable to the console.
+Write a function `Four` that returns the number `4` and a function `Five` that returns the number `5`. Invoke each function and assign their results to variables. Add both variables to a third variable. Print that variable to the console.
 
 ### P04_2_2UserInput
 Write a function `GetUserMatches` that asks the user for how many matches he wants to draw. If the user enters a valid number (1, 2 or 3), it returns the users input as a number. Otherwise, it shows an error and asks again. Invoke that function and assign the result to a variable named `userMatches`. Print the value of the variable to the console.
