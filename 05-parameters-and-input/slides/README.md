@@ -14,9 +14,9 @@ SayHello();
 
 This is very useful, if you want a function to do the same thing every single time.
 
-But sometimes, you want a function to do very similar things, but slightly differently every time. For example, we'd like to define a method that returns the Absolute of a number.
+But sometimes, you want a function to do very similar things, but slightly differently every time. For example, we'd like to define a method that prints the double value of a number.
 
-Calculating and returning the absolute of a number follows the exact same mathematical rules every time. But the number that we'd like to have an absolute of changes every time.
+Calculating and returning the double of a number follows the exact same mathematical rules every time. But the number that we'd like to have double of changes every time.
 
 We can achieve this using a parameterized function:
 
