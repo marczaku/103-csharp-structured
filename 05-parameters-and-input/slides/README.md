@@ -21,19 +21,17 @@ Calculating and returning the absolute of a number follows the exact same mathem
 We can achieve this using a parameterized function:
 
 ```cs
-int Abs(int number){
-  if(number < 0){
-    return -number;
-  }
-  return number;
+void PrintDouble(int number){
+  Console.WriteLine(number*2);
 }
 ```
 
 Above function can be invoked as follows:
 
 ```cs
-int absolute = Abs(-5); // 5
-absolute = Abs(3); // 3
+PrintDouble(3); // 6
+PrintDouble(10); // 20
+PrintDouble(-2); // -4
 ```
 
 ### Defining a Parameter
