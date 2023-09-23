@@ -28,6 +28,7 @@ Things to consider:
 - What if the number of matches that the player can maximally draw changes?
 - Can your game easily be changed?
 - Does your AI still work well?
+- What functions can you generalize to simplify your game code?
 
 ## Game 2: Tic, Tac, Toe (BONUS)
 
