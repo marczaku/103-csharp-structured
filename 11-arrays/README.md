@@ -1,8 +1,8 @@
 # Exercises 11 - Arrays:
 
-### Part 1
+## Part 1
 
-#### Goal
+### Goal
 ```
 Output:How many numbers do you want to give me?
 Input:5
@@ -23,7 +23,7 @@ Input:3
 Output:I found that number 2 times!
 ```
 
-#### Instructions
+### Instructions
 - Create a Console Project named `P11_1Arrays`
 - Ask the user, how many numbers he'd like to input.
 - Create an array of that size.
@@ -43,9 +43,9 @@ Output:I found that number 2 times!
 
 Need Help? [Here's The Slides!](slides/README.md#12-arrays)
 
-### Part 2
+## Part 2
 
-#### Goal
+### Goal
 ```
 Output:I will roll 10.000 numbers between 0 and 10:
 Output:I rolled 0 a total of 987 times.
@@ -54,7 +54,7 @@ Output:I rolled 2 a total of 998 times.
 ...
 ```
 
-#### Instructions
+### Instructions
 - Create a Console Project named `P11_2Arrays`
 - Create an array to count the occurrences of random numbers
 - roll 10.000 times for a number between 0 and 10 

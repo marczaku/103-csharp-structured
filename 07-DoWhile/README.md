@@ -1,6 +1,6 @@
 # Exercises 7 - Do..While Loops: 
 
-### Goal
+## Goal
 ```
 Output:Please give me a number between 1 and 3.
 Input:4
@@ -14,7 +14,7 @@ Input:103
 Output:You gave number 103.
 ```
 
-### Instructions
+## Instructions
 - Create a Console Project named `P7DoWhileLoops` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
 - Create a Function named `AskNumberBetween`
   - It has two number parameters: `min` and `max`

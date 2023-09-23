@@ -2,7 +2,9 @@
 
 ## 5.1 One Parameter
 
-### Goal
+### Final Exercise
+
+#### Goal
 
 ```
 Output:What Fibonacci number would you like?
@@ -13,7 +15,7 @@ Input:10
 Output:55
 ```
 
-### Instructions
+#### Instructions
 
 - Create a Console Project named `P05_1OneParameter` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
 - A classic! Implement a function that implements the nth Fibonacci Number
@@ -41,11 +43,49 @@ Here's the first few numbers of the sequence:
 | 10                  | 55                    | 
 | 11                  | 89                    | 
 
-Need Help? [Here's The Slides!](slides/README.md#6-one-parameter)
+### P05_0_FirstParam
+Write a function that takes one string parameter. Print the parameter to the console. Invoke the function with the following arguments:
+- `"Marc"`
+- `"Game Programming"`
+- `"Forsbergs"`
+
+### P05_1_1Double
+Write a function that takes one integer parameter. It prints double the value to the console. Invoke the function with the following arguments: 
+- `5`
+- `-2`
+- `0`
+- `100`
+- `1_000_000_000`
+- `2_000_000_000`
+
+### P05_1_2Cubical
+Write a function that takes one integer parameter. It prints the cubical of the number (the number to the power of three) to the console. Invoke the function with the following arguments:
+- `1`
+- `0`
+- `2`
+- `3`
+- `-4`
+
+### P05_1_3Square
+Write a function that takes one rational number parameter. It returns the square of the number as a rational number. Invoke the function and assign the result to a variable, then print the value of the variable to the console for the following arguments:
+- `0.5f`
+- `-2f`
+- `0f`
+- `4.2f`
+
+### P05_2_4PrimeNumber
+Write a function that takes an integer argument and returns `true` if it is a Prime Number or `false` if it is not. Use recursive function calls instead of Loops.
+
+### P05_1_5Countdown
+Implement the countdown again by having a function invoke itself (recursively) printing the numbers while counting down. The function takes one argument of type integer. e.g.:
+- Arguent: `10`
+- Output: `10...9...8...7...6...5...4...3...2...1...0...`
 
 ## 5.2 More Parameters
 
-### Goal
+### Final Exercise
+
+#### Goal
 
 Make the program compile by providing correct definitions and implementations of the functions that are missing in the following Source Code:
 
@@ -118,7 +158,7 @@ goto GameLoop;
 
 </details>
 
-### Instructions
+#### Instructions
 
 - Create a Console Project named `P05_2MoreParameters` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
 - Copy Above Source Code into your `Program.cs`-File.
@@ -135,3 +175,31 @@ goto GameLoop;
     - You can try implementing the Rounding Part yourself, or use `float MathF.Round(float value)`.
 - If you have implemented both methods correctly, you should see a ball roll from left to right and then back to the left again.
 - Check out the remaining source code, if you're interested in some advanced C# skills.
+
+## P05_2_0FullName
+Write a function that takes two string Parameters for first name and last name and then prints a welcoming message to the console. Invoke it with the arguments:
+- `"Marc"`, `"Zaku"`
+- `"James"`, `"Bond"`
+- `"Michael"`, `"Jackson"`
+
+### P05_2_1Average
+Write a function that takes two integer arguments and prints the average of both numbers. Test it with the following arguments:
+- `2`, `6`
+- `0`, `10`
+- `-12`, `12`
+- `11`, `9`
+
+### P05_2_2Power
+Write a function that takes two integer arguments and prints the first argument to the power of the second number. Test it with the following arguments:
+- `3`, `2`
+- `5`, `1`
+- `2`, `5`
+- `2`, `10`
+- `19`, `0`
+- `13`, `1`
+
+### P05_2_3NextDoubleBetween
+Write a function that takes to double arguments and prints a random number between the first argument (inclusive) and the second argument (exclusive). Figure out a way of testing the function.
+
+### P05_2_4GetUserNumberBetween
+Write a function that takes two integer arguments and then asks the user repeatedly for a valid number until the user correctly entered a number between the first and second argument. Return the user's number.

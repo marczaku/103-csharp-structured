@@ -1,63 +1,38 @@
-## 8 - Math: 
+# Exercises 13 - Strings
 
-### Goal
-```
-Output:Give me your first number.
-Input:3.7
-Output:Give me your second number.
-Input:2.3
-Output:Max:
-Output:3.7
-Output:Min:
-Output:2.3
-Output:Sqrt:
-Output:1.9235384185619262
-Output:Abs:
-Output:3.7
-Output:Round:
-Output:4
-Output:Floor:
-Output:3
-Output:Ceil:
-Output:4
-Output:Clamp:
-Output:2.3
-Output:Pow:
-Output:20.270476188160853
-```
+For all of these exercises, for an extra boost of learning, think about, how you could implement these exercises as functions that you can later reuse.
 
-### Instructions
-- Create a Console Project named `P8Math` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
-- Ask the user for two numbers
-- Convert each of them to `double`
-- Assign the values to two variables named `first` and `second`
-- Print the results of all the mathematical functions, which are shown on the slides, to the user one by one. 
-  - For the ones requiring two parameters, pass both variables. 
-  - For the ones requiring one parameter, use only the `first` variable. 
-  - For the ones requiring three parameters, pass `0` as the second parameter.
+## Basic String Operations
 
-Need Help? [Here's The Slides!](slides/README.md#8-math)
+### P13_1_1Length
 
-## 9 - Strings: 
+Write a program that asks the user to enter a string and then displays its length.
 
-### Goal
-```
-Output:What's your first name?
-Input:Marc
-Output:What's your last name?
-Input:Zaku
-Output:What's your age?
-Input:31
-Output:Hello Marc Zaku, you are 31 years old!
-```
+### P13_1_2Initials
+Create a program that takes a user's full name as input and then displays their initials in uppercase.
 
-### Instructions
-- Create a Console Project named `P9Strings` [How To?](https://gist\.github\.com/marczaku/a8b3c38c37e8876a46194a73ed24b1f2)
-- Ask the user for:
-  - his first name
-  - his last name
-  - his age 
-- Then, send an output to the console like this: 
-  - `Hello John Doe, you are 23 years old!`
+### P13_1_3ReverseWord
+Develop a program that reverses a given string entered by the user.
 
-Need Help? [Here's The Slides!](slides/README.md#9-strings)
+### P13_1_4Vowels
+Write a program that counts the number of vowels in a user-entered string.
+
+### P13_1_5WordCount
+Create a program that takes a sentence as input and displays the number of words in it.
+
+## String Manipulation
+
+### P13_2_1Replace
+Write a program that replaces all occurrences of a specific word in a given string with another word. Prompt the user for both the original string and the words to replace.
+
+### P13_2_2NoSpace
+Develop a program that removes all spaces from a user-entered sentence and displays the modified sentence.
+
+### P13_2_3AllUpper
+Create a program that takes a string input and capitalizes the first letter of each word in the string.
+
+### P13_2_4ReverseSentence
+Write a program that asks the user to enter a sentence and then displays it in reverse word order. For example, "Hello World" should become "World Hello."
+
+### P13_2_5Palindrome
+Develop a program that checks if a given string is a palindrome (reads the same forwards and backwards).

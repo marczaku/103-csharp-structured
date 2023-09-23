@@ -1,5 +1,34 @@
 # Exercises 4 - Game On
 
+## The Real Nim Game
+
+Implement Nim again. But this time using Three piles of variable Matches. You can randomize them, if you like, but you may for testing play with this composition:
+
+```
+O O O
+| | | (Row 1)
+
+O O O O
+| | | | (Row 2)
+    
+O O O O O
+| | | | | (Row 3)
+```
+
+The player can decide each turn, which Row he wants to draw from and how many matches he'd like to draw from it (at least 1, not more than three, but also not more than there are still left in the Row).
+
+Next, it's the AI's turn.
+
+Whoever draws the last match, leaving no matches behind, loses.
+
+Things to consider:
+- What game structure do you want to use for the Matches?
+- Does it work well, if the number of Stacks changes?
+- Can you make it so it's easy to change the game to have 10 stacks?
+- What if the number of matches that the player can maximally draw changes?
+- Can your game easily be changed?
+- Does your AI still work well?
+
 ## Game 2: Tic, Tac, Toe (BONUS)
 
 ### Goal

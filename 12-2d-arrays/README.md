@@ -1,6 +1,6 @@
 # Exercises 12 - 2D Arrays
 
-### Goal
+## Goal
 <details>
   <summary>Toggle Me</summary>
 
@@ -55,7 +55,7 @@ Output:\01234x
 
 </details>
 
-### Instructions
+## Instructions
 
 We'll make a text-driven Painting Tool!
 

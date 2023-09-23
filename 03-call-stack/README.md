@@ -29,6 +29,30 @@ Output:Launch!
 - Run the code line by line using the debugger. 
 - Observe the call stack. Can you confirm your guesses?
 
+## P03_2FunctionPuzzle
+- Use the code sample below. Use the functions `F1`, `F2`, `F3` and `F4` in the correct oder to generate the output `BAA-BABBA-AAA-AA-BAB`
+```csharp
+void F1(){
+    Console.Write("A"); // A
+}
+void F2(){
+    Console.Write("B"); // BA
+    F1();
+}
+void F3(){
+    F1();
+    Console.Write("-"); // A-BAB
+    F2();
+}
+void F4(){
+    Console.Write("-"); // -A
+    F1();
+}
+
+// Use F1, F2, F3 and F4 in the correct order here.
+```
+
+
 ## P03_1Triangle
 Draw the Triangle again, but this time using a recursive function instead of `goto`
 
