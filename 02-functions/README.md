@@ -43,8 +43,8 @@ Output:Move Forward.
 ## P02_1Hello
 Write a C# program that defines a parameter-less void function to print a simple `"Hello, World!"` message. Call this function from the main program.
 
-## P02_2Menu
-Create a program that uses a parameter-less void function to display a menu of options to the user. Implement a loop to repeatedly display the menu until the user chooses to exit.
+## P02_2Supporter
+Write a C# program that defines a parameter-less void function called `AskForHelp`. It prints `"Asking for help."` to the console and then invokes another function named `IAmTheHelp`. That function prints `"I am the help!"`. Invoke the function `AskForHelp` from the main program.
 
 ## P02_3Random
 Develop a C# program that contains a parameter-less void function to generate and print a random number between 1 and 100. Call this function multiple times to display different random numbers.
