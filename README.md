@@ -6,9 +6,12 @@ This course will introduce you to writing reusable code using functions, using L
 
 ## Passing Criteria
 - Completed The Real Nim Game
+- Use Functions!
 
 ## Excellent Criteria
-- Completed Tic-Tac-Toe
+- Completed either:
+  - The Real Nim Game using an Array
+  - Tic-Tac-Toe using a 2D-Array
 
 # 0 First Steps
 - [ ] Start the Assignment through Learnpoint.
