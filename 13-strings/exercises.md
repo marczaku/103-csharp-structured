@@ -9,7 +9,7 @@ For all of these exercises, for an extra boost of learning, think about, how you
 Write a program that asks the user to enter a string and then displays its length.
 
 ### P13_1_2Initials
-Create a program that takes a user's full name as input and then displays their initials in uppercase.
+Create a program that takes a user's full name as (a single) input and then displays their initials in uppercase.
 
 ### P13_1_3ReverseWord
 Develop a program that reverses a given string entered by the user.
