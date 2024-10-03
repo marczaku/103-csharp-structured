@@ -1,4 +1,4 @@
-# Exercises 4 - Game On
+# Exercises 14 - Game On
 
 ## The Real Nim Game
 
